@@ -1,0 +1,18 @@
+<!--Form by API use-->
+<html>
+    <body>
+        <h1>Contáctanos</h1>
+        {% if form.errors %}
+        <p style="color: red;">Please check</p>
+        {% endif %}
+
+        <form action="" method="POST">{% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            
+            <input type="submit" value="Submit">
+
+        </form>
+    </body>
+</html>

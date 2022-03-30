@@ -1,0 +1,34 @@
+<html>
+    <body>
+
+        {% include "upper/barra.html" %}
+    <h2 style="color: red">
+    Hola mundo, primera plantilla
+    </h2>
+    {#Esto es un comentario#}
+    {% comment %} Esta en una manera
+    alternativa de agregar comentarios
+    de varias lineas. |=Pipper=filtro
+    {% endcomment %}
+    {% if nombre_persona == 'Profesor Juan' %}
+    <p>El curso lo imparte el profesor titular</p>
+    {% else %}
+    <p>El curso lo imparte el profesor suplente</p>
+    {% endif %}
+    <p>El nombre del profesor es: {{nombre_persona}} {{apellido_persona}}</p>
+    
+    <p>Estamos viendo plantillas el d&iacute;a: {{momento_actual.day}}/{{momento_actual.month}}/{{momento_actual.year}}</p>
+    <p><strong>Temas del curso</strong></p>
+    <p>
+        <ul>
+       {% if temas %}
+            {% for tema in temas %}
+                <li>{{tema|first|lower}}</li> 
+            {% endfor %}
+       {% else %}
+            <p>No hay elementos que mostrar</p>
+       {% endif %}
+        </ul>
+    </p>
+    </body>
+    </html>

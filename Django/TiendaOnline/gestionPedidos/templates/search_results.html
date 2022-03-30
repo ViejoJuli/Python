@@ -1,0 +1,17 @@
+<html>
+<body>
+<p>You're looking for: <strong>{{query}}</strong></p> 
+{% if items %}
+    <p>Finded Items:{{items|length}} items </p>
+    <ul>
+        {% for item in items %}
+        <li>
+            {{item.nombre}}&nbsp; {{item.seccion}}&nbsp;{{item.precio}}
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Items Finded</p>
+{% endif %}
+</body>
+</html>
